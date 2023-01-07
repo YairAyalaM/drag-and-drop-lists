@@ -97,7 +97,7 @@
               <th scope="col">Handle</th>
             </tr>
           </thead>
-          <tbody id="example2Left">
+          <tbody id="example3Left">
             <tr>
               <th scope="row">1</th>
               <td>Mark</td>
@@ -128,7 +128,78 @@
               <th scope="col">Handle</th>
             </tr>
           </thead>
-          <tbody id="example2Right">
+          <tbody id="example3Right">
+            <tr>
+              <th scope="row">4</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">5</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">6</th>
+              <td colspan="2">Larry the Bird</td>
+              <td>@twitter</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Disabling Sorting -->
+  <div class="d-flex align-items-center justify-content-center">
+    <h1>Tables Disabling Sorting</h1>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">First</th>
+              <th scope="col">Last</th>
+              <th scope="col">Handle</th>
+            </tr>
+          </thead>
+          <tbody id="example4Left">
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td colspan="2">Larry the Bird</td>
+              <td>@twitter</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">First</th>
+              <th scope="col">Last</th>
+              <th scope="col">Handle</th>
+            </tr>
+          </thead>
+          <tbody id="example4Right">
             <tr>
               <th scope="row">4</th>
               <td>Mark</td>
@@ -164,4 +235,42 @@ new Sortable(example2Right, {
     animation: 150
 });
 </script>
+
+<!-- tables clone -->
+<script>
+  new Sortable(example3Left, {
+    group: {
+        name: 'shared',
+        pull: 'clone' // To clone: set pull to 'clone'
+    },
+    animation: 150
+});
+
+new Sortable(example3Right, {
+    group: {
+        name: 'shared',
+        pull: 'clone'
+    },
+    animation: 150
+});
+</script>
+
+<!-- Disabling Sorting -->
+  <script>
+    new Sortable(example4Left, {
+    group: {
+        name: 'shared',
+        pull: 'clone',
+        put: false // Do not allow items to be put into this list
+    },
+    animation: 150,
+    sort: false // To disable sorting: set sort to false
+});
+
+new Sortable(example4Right, {
+    group: 'shared',
+    animation: 150
+});
+  </script>
+  <!-- aqui terminan los scripts -->
 </html>
